@@ -30,6 +30,8 @@ defmodule ExMachina.Ecto do
         def fields_for(factory_name, attrs \\ %{}) do
           raise "fields_for/2 has been renamed to params_for/2."
         end
+
+        defoverridable [params_for: 2, params_with_assocs: 2, fields_for: 2]
       end
     else
       raise ArgumentError,
